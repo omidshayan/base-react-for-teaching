@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './../style.css';
+import { Axios } from 'axios';
+
 function CreateProduct() {
+    const [product, setProduct] = useState([]);
+    const [price, setPrice] = useState([]);
+    const [color, setColor] = useState([]);
+    const [count, setCount] = useState([]);
+    const handleSubmit = () =>{
+        Axios.post("/localhost:5000/api/createProduct", {
+            name : product,
+            price : price,
+            color : color,
+            count : count
+        });
+        console.log(product);
+    }
   return (
     <>
     <input type="text" id="menu-toggle" />
@@ -42,45 +57,31 @@ function CreateProduct() {
             </div>
         </div>
     </div>
-
     <div className="content">
         <header>
             <div className="hamber">
                 <i className="fas fa-bars"></i>
             </div>
         </header>
-
-
         <main>
             <div className="title">
-                <div className="title-text">افزودن وسیله جدید</div>
+                <div className="title-text">افزودن محصول جدید</div>
             </div>
             <br />
             <div className="insert">
-                <form action="">
-                    <div>title name</div>
-                    <input type="text" placeholder="title..." name="name" autocomplete="off" />
-                    <div role="option"></div>
-                    <div>select option </div>
-                    <select name="select">
-                        <option selected disabled>please select item</option>
-                        <option value="item 1">item 1</option>
-                        <option value="item 2">item 2</option>
-                        <option value="item 3">item 3</option>';
-                    </select>
-                    <div>title name </div>
-                    <input type="text" placeholder="title name..." name="name" />
-                    <div>title name </div>
-                    <input type="text" placeholder=" title name..." name="model" />
-                    <div>title name</div>
-                    <input type="text" placeholder=" title name..." name="color" />
-                    <input type="submit" value="insert" className="btn" />
+                <form onSubmit={handleSubmit}>
+                    <div>نام محصول </div>
+                    <input type="text" placeholder="نام..." name="name" onChange={(e) => setProduct(e.target.value)} />
+                    <div>قیمت </div>
+                    <input type="text" placeholder="قیمت..." name="price" onChange={(e) => setPrice(e.target.value)} />
+                    <div>رنگ محصول  </div>
+                    <input type="text" placeholder=" رنگ محصول..." name="color" onChange={(e) => setColor(e.target.value)} />
+                    <div>تعداد</div>
+                    <input type="text" placeholder=" تعداد..." name="count"  onChange={(e) => setCount(e.target.value)}/>
+                    <input type="submit" value="ثبت" className="btn" />
                 </form>
             </div>
         </main>
-
-
-
     </div>
     </>
   )
