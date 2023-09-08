@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./../style.css";
+import Axios from "axios";
+
 function Products() {
+  const [ali, setProducts] = useState([]);
+  useEffect(async function () {
+    try {
+      const result = await Axios.get("localhost:5000/api/products", {});
+      setProducts(result.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
   return (
     <>
       <input type="text" id="menu-toggle" />
@@ -50,63 +61,48 @@ function Products() {
         </header>
 
         <main>
-            <div className="title">
-                <div className="title-text">title in page</div>
-            </div>
-            <br />
-            <div className="table-wrapper">
-                <table className="fl-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>نام</th>
-                            <th>دسته بندی </th>
-                            <th>تعداد</th>
-                            <th>قیمت</th>
-                            <th>چاپ</th>
-                            <th>ویرایش</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>book</td>
-                            <td>book 1</td>
-                            <td>programming</td>
-                            <td>230 </td>
-                            <td><a href="#"><i className="fas fa-print"></i></a></td>
-                            <td><a href="#"><i className="fas fa-edit"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>book</td>
-                            <td>book 1</td>
-                            <td>programming</td>
-                            <td>230 </td>
-                            <td><a href="#"><i className="fas fa-print"></i></a></td>
-                            <td><a href="#"><i className="fas fa-edit"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>book</td>
-                            <td>book 1</td>
-                            <td>programming</td>
-                            <td>230 </td>
-                            <td><a href="#"><i className="fas fa-print"></i></a></td>
-                            <td><a href="#"><i className="fas fa-edit"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>book</td>
-                            <td>book 1</td>
-                            <td>programming</td>
-                            <td>230 </td>
-                            <td><a href="#"><i className="fas fa-print"></i></a></td>
-                            <td><a href="#"><i className="fas fa-edit"></i></a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+          <div className="title">
+            <div className="title-text">title in page</div>
+          </div>
+          <br />
+          <div className="table-wrapper">
+            <table className="fl-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>نام</th>
+                  <th>دسته بندی </th>
+                  <th>تعداد</th>
+                  <th>قیمت</th>
+                  <th>چاپ</th>
+                  <th>ویرایش</th>
+                </tr>
+              </thead>
+              <tbody>
+                {ali.map((product,index) =>  {
+                  return (
+                    <tr key={product.id}>
+                      <td>{index + 1}</td>
+                      <td>{product.name}</td>
+                      <td>book 1</td>
+                      <td>programming</td>
+                      <td>230 </td>
+                      <td>
+                        <a href="#">
+                          <i className="fas fa-print"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#">
+                          <i className="fas fa-edit"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </main>
       </div>
     </>

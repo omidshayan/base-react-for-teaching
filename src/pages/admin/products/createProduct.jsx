@@ -3,17 +3,24 @@ import './../style.css';
 import { Axios } from 'axios';
 
 function CreateProduct() {
-    const [product, setProduct] = useState([]);
-    const [price, setPrice] = useState([]);
-    const [color, setColor] = useState([]);
-    const [count, setCount] = useState([]);
-    const handleSubmit = () =>{
-        Axios.post("/localhost:5000/api/createProduct", {
+    const [product, setProduct] = useState(null);
+    const [price, setPrice] = useState(null);
+    const [color, setColor] = useState('');
+    const [count, setCount] = useState(0);
+    const handleSubmit = async () =>{
+        try{
+        const result = await Axios.post("/localhost:5000/api/createProduct", {
             name : product,
             price : price,
             color : color,
             count : count
         });
+        console.log(result.data);
+        }
+        catch(error){
+            console.log(error);
+        }
+
         console.log(product);
     }
   return (
