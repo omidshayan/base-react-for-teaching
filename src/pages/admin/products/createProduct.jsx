@@ -7,7 +7,8 @@ function CreateProduct() {
     const [price, setPrice] = useState(null);
     const [color, setColor] = useState('');
     const [count, setCount] = useState(0);
-    const handleSubmit = async () =>{
+    const handleSubmit = async (event) =>{
+        event.preventDefault();
         try{
         const result = await Axios.post("/localhost:5000/api/createProduct", {
             name : product,
@@ -20,7 +21,6 @@ function CreateProduct() {
         catch(error){
             console.log(error);
         }
-
         console.log(product);
     }
   return (
@@ -95,3 +95,4 @@ function CreateProduct() {
 }
 
 export default CreateProduct
+

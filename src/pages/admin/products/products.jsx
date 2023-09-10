@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./../style.css";
-import Axios from "axios";
+import apiRequests from "../../../services/Axios/config";
 
 function Products() {
-  const [ali, setProducts] = useState([]);
-  useEffect(async function () {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
     try {
-      const result = await Axios.get("localhost:5000/api/products", {});
-      setProducts(result.data.data);
+      apiRequests.get("/products").then((result) => {
+      setProducts(result.data);
+    });
+
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
+
   }, []);
   return (
     <>
@@ -72,21 +75,19 @@ function Products() {
                   <th>#</th>
                   <th>نام</th>
                   <th>دسته بندی </th>
-                  <th>تعداد</th>
                   <th>قیمت</th>
                   <th>چاپ</th>
                   <th>ویرایش</th>
                 </tr>
               </thead>
               <tbody>
-                {ali.map((product,index) =>  {
+              {products.map((product, index) => {
                   return (
-                    <tr key={product.id}>
+                    <tr key={index}>
                       <td>{index + 1}</td>
-                      <td>{product.name}</td>
-                      <td>book 1</td>
-                      <td>programming</td>
-                      <td>230 </td>
+                      <td>{product.title}</td>
+                      <td>{product.category}</td>
+                      <td>{product.price} </td>
                       <td>
                         <a href="#">
                           <i className="fas fa-print"></i>
