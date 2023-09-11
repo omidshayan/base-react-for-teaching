@@ -9,11 +9,9 @@ function Products() {
       apiRequests.get("/products").then((result) => {
       setProducts(result.data);
     });
-
     } catch (error) {
       console.log(error)
     }
-
   }, []);
   return (
     <>
