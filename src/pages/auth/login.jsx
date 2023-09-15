@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './style.css';
 import { Axios } from 'axios';
-function Login() {
+function Login(props) {
 
   const [getUsername, setUserName] = useState(null);
   const [getPassword, setPassword] = useState(null);
