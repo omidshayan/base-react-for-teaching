@@ -1,6 +1,8 @@
 import React from 'react'
 import './style.css';
 import {Link} from 'react-router-dom'
+import User from './Users';
+
 function Dashboard() {
   return (
     <>
@@ -82,6 +84,7 @@ function Dashboard() {
             </div>
 
            </div>
+           < User />
        </main>
     </div>
     </>
