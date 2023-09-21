@@ -2,11 +2,12 @@ import React from 'react'
 import './style.css';
 
 function Book(props) {
+    const {name, description} = props
   return (
     <>
         <div className="main">
-            <h3>{props.name}</h3>
-            <h5>{props.description}</h5>
+            <h3>{name}</h3>
+            <h5>{description}</h5>
         </div>
     </>
   )
