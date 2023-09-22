@@ -90,6 +90,9 @@ function Dashboard() {
           <Book name="hilgard" description="description for helgard" />
           <Book name="5 clock" description="description for 5 clock" />
           <Book name="butifull" description="description for butifull" />
+          <Book>
+            children
+          </Book>
         </div>
       </div>
     </>

@@ -1,8 +1,8 @@
 import React from 'react'
 import './style.css';
 
-function Book(props) {
-    const {name, description} = props
+function Book({name, description}) {
+    // const {name, description} = props
   return (
     <>
         <div className="main">
