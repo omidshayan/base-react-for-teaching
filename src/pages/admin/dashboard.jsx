@@ -5,6 +5,11 @@ import User from "./Users";
 import Book from "../books/Book";
 
 function Dashboard() {
+  const books = [
+    {id: 1, name: "hilgard", description: "description"},
+    {id: 2, name: "java learn" , description: "description"},
+    {id: 3, name: "php learn" , description: "description"},
+  ]
   return (
     <>
       <input type="text" id="menu-toggle" />
@@ -87,12 +92,14 @@ function Dashboard() {
         <br />
         <br />
         <div className="card">
-          <Book name="hilgard" description="description for helgard" />
+          {/* <Book name="hilgard" description="description for helgard" />
           <Book name="5 clock" description="description for 5 clock" />
-          <Book name="butifull" description="description for butifull" />
-          <Book>
-            children
-          </Book>
+          <Book name="butifull" description="description for butifull" /> */}
+         
+          <Book {...books[0]}/>
+          <Book {...books[1]}/>
+          <Book {...books[2]}/>
+            
         </div>
       </div>
     </>
