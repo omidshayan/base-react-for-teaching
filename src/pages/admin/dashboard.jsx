@@ -3,6 +3,7 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import User from "./Users";
 import Book from "../books/Book";
+import Counter from "../exmaple/Counter";
 
 function Dashboard() {
   const books = [
@@ -101,6 +102,7 @@ function Dashboard() {
           <Book {...books[2]}/>
             
         </div>
+      <Counter />
       </div>
     </>
   );

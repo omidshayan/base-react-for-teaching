@@ -1,0 +1,32 @@
+.counter{
+    text-align: center;
+    width: 30%;
+    margin: 30px auto;
+}
+.box{
+    text-align: center;
+    width: 70%;
+    border: 2px solid rebeccapurple;
+    margin: 30px auto;
+    padding: 5px;
+    border-radius: 15px;
+}
+.box button{
+    cursor: pointer;
+    font-size: 20px;
+    padding: 8px;
+    background-color: rebeccapurple;
+    color: aliceblue;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: 0.5s;
+}
+.box button:hover{
+    background-color: rgb(94, 14, 173);
+}
+.box h3{
+    padding: 25px;
+    font-size: 30px;
+}
