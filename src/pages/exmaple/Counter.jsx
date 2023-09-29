@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import './counter.css';
 
@@ -16,6 +16,10 @@ function Counter() {
             return prevState -1;
         })
     }
+
+    // useEffect(() =>{
+    //         console.log('useEffect')
+    // },[])
 
 
   return (
