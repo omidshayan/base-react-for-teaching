@@ -20,7 +20,11 @@ function Counter() {
     // useEffect(() =>{
     //         console.log('useEffect')
     // },[])
-
+    useEffect(() =>{
+        fetch('https://fakestoreapi.com/products')
+        .then(res => res.json())
+      },[])
+  
 
   return (
     <div className='counter'>
