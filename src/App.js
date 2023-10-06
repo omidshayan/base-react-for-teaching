@@ -1,3 +1,4 @@
+import CustomHook from "./pages/CustomHook";
 import Dashboard from "./pages/admin/dashboard";
 import CreateProduct from "./pages/admin/products/createProduct";
 import Products from "./pages/admin/products/products";
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="/" element={<CustomHook />} />
         <Route path="/login" element={<Login name='props' />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/createProduct" element={<CreateProduct />} />
