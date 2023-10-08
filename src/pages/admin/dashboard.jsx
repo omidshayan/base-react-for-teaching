@@ -48,6 +48,12 @@ function Dashboard() {
                   <span>نمایش محصولات</span>
                 </a>
               </li>
+              <li>
+                <a href={"useInput"}>
+                  <i className="fas fa-tachometer-alt"></i>
+                  <span> useInput Hook</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
