@@ -5,7 +5,7 @@ import User from "./Users";
 import Book from "../books/Book";
 import Counter from "../exmaple/Counter";
 
-function Dashboard() {
+function Context() {
   const books = [
     {id: 1, name: "hilgard", description: "description"},
     {id: 2, name: "java learn" , description: "description"},
@@ -120,4 +120,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Context;
