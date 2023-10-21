@@ -5,6 +5,9 @@ import User from "../Users";
 import Book from "../../books/Book";
 import Counter from "../../exmaple/Counter";
 import SubTitle from "./SubTitle";
+const newContext = React.createContext('new');
+
+
 
 function Context() {
   const books = [
