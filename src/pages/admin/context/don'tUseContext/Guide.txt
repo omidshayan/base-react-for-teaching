@@ -1,0 +1,3 @@
+Guide for this work:
+
+We have four JS files in this folder, one of which we want to send a text from the first page to the last page, we did this by props, which is a completely wrong thing that causes many problems in the project, this work is only for A better understanding of the context has been made
