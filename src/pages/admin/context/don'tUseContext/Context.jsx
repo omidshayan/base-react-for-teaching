@@ -1,11 +1,10 @@
 import React from "react";
-import ".././style.css";
+import "../.././style.css";
 import { Link } from "react-router-dom";
-import User from "../Users";
-import Book from "../../books/Book";
-import Counter from "../../exmaple/Counter";
+import User from "../../Users";
+import Book from "../../../books/Book";
+import Counter from "../../../exmaple/Counter";
 import SubTitle from "./SubTitle";
-const newContext = React.createContext('new');
 
 
 

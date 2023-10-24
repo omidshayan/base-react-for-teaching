@@ -7,7 +7,7 @@ export default function SubTitle({subone}) {
         {subone}
         </h1>
         <br />
-        <TowSub tow={'tow sub title'}/>
+        <TowSub tow={subone}/>
         </div>
   )
 }

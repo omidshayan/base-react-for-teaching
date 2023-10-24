@@ -8,7 +8,7 @@ export default function TowSub({tow}) {
         <h1>
             {tow}
         </h1>
-        <TreeSub tree={'tree sub'}/>
+        <TreeSub tree={tow}/>
     </div>
   )
 }
