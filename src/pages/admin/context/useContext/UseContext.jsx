@@ -1,7 +1,4 @@
-import React from 'react'
+const { createContext } = require("react");
 
-export default function UseContext() {
-  return (
-    <div>UseContext</div>
-  )
-}
+
+export const userContext = createContext();
