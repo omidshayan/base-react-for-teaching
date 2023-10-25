@@ -1,4 +1,4 @@
 const { createContext } = require("react");
 
 
-export const userContext = createContext();
+export const UserDataContext = createContext();
