@@ -8,6 +8,7 @@ import Login from "./pages/auth/login";
 
 import {Routes, Route} from 'react-router-dom'
 import UserData from "./pages/admin/context/useContext/UserData";
+import Card from "./pages/admin/card/Card";
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
         <Route path="/useInput" element={<UseInput />} />
         <Route path="/context" element={<Context />} />
         <Route path="/useContext" element={<UserData />} />
+        <Route path="/addtocard" element={<Card />} />
       </Routes>
     </div>
   );

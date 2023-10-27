@@ -1,16 +1,8 @@
 import React from "react";
-import "./style.css";
-import { Link } from "react-router-dom";
-import User from "./Users";
-import Book from "../books/Book";
-import Counter from "../exmaple/Counter";
+import './Card.css';
+import {BsBag} from 'react-icons/bs';
 
-function Dashboard() {
-  const books = [
-    {id: 1, name: "hilgard", description: "description"},
-    {id: 2, name: "java learn" , description: "description"},
-    {id: 3, name: "php learn" , description: "description"},
-  ]
+function Card() {
   return (
     <>
       <input type="text" id="menu-toggle" />
@@ -74,8 +66,6 @@ function Dashboard() {
                   <span>Add To Card</span>
                 </a>
               </li>
-
-
             </ul>
           </div>
         </div>
@@ -87,53 +77,16 @@ function Dashboard() {
             <i className="fas fa-bars"></i>
           </div>
         </header>
-
-        <main>
-          <div className="report">
-            <div className="report-item">
-              <div className="report-icon">
-                <i className="fas fa-eye"></i>
-              </div>
-              <div className="report-text">
-                <span>تعداد بازدید</span>
-              </div>
-            </div>
-
-            <div className="report-item">
-              <div className="report-icon">
-                <i className="fas fa-eye"></i>
-              </div>
-              <div className="report-text">
-                <span>تعداد بازدید</span>
-              </div>
-            </div>
-            <div className="report-item">
-              <div className="report-icon">
-                <i className="fas fa-eye"></i>
-              </div>
-              <div className="report-text">
-                <span>تعداد بازدید</span>
-              </div>
-            </div>
-          </div>
-          <User />
-        </main>
+            <h2>Add To Card</h2>
         <br />
         <br />
-        <div className="card">
-          {/* <Book name="hilgard" description="description for helgard" />
-          <Book name="5 clock" description="description for 5 clock" />
-          <Book name="butifull" description="description for butifull" /> */}
-         
-          <Book {...books[0]}/>
-          <Book {...books[1]}/>
-          <Book {...books[2]}/>
-            
+        <div className="head">
+            <BsBag className="icon"/>
+            <span>0</span>
         </div>
-      <Counter />
       </div>
     </>
   );
 }
 
-export default Dashboard;
+export default Card;
