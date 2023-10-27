@@ -1,9 +1,8 @@
 import React from "react";
-import { UserDataContext } from "./context";
-import OneContext from "./OneContext";
-import TwoContext from "./TwoContext";
-import ThreeContext from "./ThreeContext";
-import NotUseContext from "./NotUseContext";
+import UserProvider from './context';
+import PageOne from "./PageOne";
+import PageTwo from "./PageTwo";
+import NotContext from "./NotContext";
 
 function UserData() {
   const books = [
@@ -82,13 +81,17 @@ function UserData() {
         <h1>this page use from context</h1>
         <br />
         <br />
-        <UserDataContext.Provider value={'this is context'}>
-        <OneContext />
-        <TwoContext />
-        <ThreeContext />
-        </UserDataContext.Provider>
+
+<UserProvider>
+  <PageOne />
+  <br />
+  <PageTwo />
+  <br />
+</UserProvider>
+  <NotContext />
+
+
         <br />
-        <NotUseContext />
       </div>
     </>
   );

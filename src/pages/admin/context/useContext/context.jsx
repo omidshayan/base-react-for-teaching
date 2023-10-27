@@ -1,4 +1,15 @@
 import { createContext } from "react";
 
 
-export const UserDataContext = createContext();
+export const username = createContext()
+
+
+const userProvider = ({children}) => {
+    return(
+        <username.Provider value={'my username'}>
+            {children}
+        </username.Provider>
+    )
+}
+
+export default userProvider

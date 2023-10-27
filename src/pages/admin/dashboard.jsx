@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 import User from "./Users";
 import Book from "../books/Book";
 import Counter from "../exmaple/Counter";
-import { UserDataContext } from "./context/useContext/UseContext";
 
 function Dashboard() {
-  console.log(UserDataContext)
   const books = [
     {id: 1, name: "hilgard", description: "description"},
     {id: 2, name: "java learn" , description: "description"},
