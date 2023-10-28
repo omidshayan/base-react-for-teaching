@@ -13,3 +13,12 @@
 .icon{
     font-size: 24px;
 }
+.hr{
+    margin: 15px 0 50px 0;
+}
+.allCard{
+    display: flex;
+}
+.evryCard{
+    margin: 3px;
+}

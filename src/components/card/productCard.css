@@ -1,0 +1,47 @@
+.ProductCard{
+    width: 220px;
+    height: 330px;
+    background-color: rgba(48, 47, 47, 0.733);
+    border: 1px solid rebeccapurple;
+    display: block;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.cardTitle{
+    font-size: 26px;
+    margin: 9px;
+    font-weight: bold;
+}
+.cardImg img{
+    width: 160px;
+    height: 110px;
+    border-radius: 10px;
+}
+.desc{
+    margin: 12px;
+}
+.price{
+    margin: 5px;
+    background-color: rgb(211, 4, 211);
+    padding: 5px;
+    width: 50px;
+    margin: 0 auto;
+    border-radius: 6px;
+    color: aliceblue;
+    font-weight: bold;
+}
+.addtocard{
+    position: absolute;
+    bottom: 0;
+    background-color: greenyellow;
+    padding: 7px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+.addtocard span{
+    margin: 0 auto;
+}

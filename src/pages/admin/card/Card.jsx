@@ -1,6 +1,9 @@
 import React from "react";
-import './Card.css';
-import {BsBag} from 'react-icons/bs';
+import "./Card.css";
+import { BsBag } from "react-icons/bs";
+import ProductCard from "../../../components/card/ProductCard";
+
+import Data from "../../../data";
 
 function Card() {
   return (
@@ -77,13 +80,23 @@ function Card() {
             <i className="fas fa-bars"></i>
           </div>
         </header>
-            <h2>Add To Card</h2>
+        <h2>Add To Card</h2>
         <br />
         <br />
         <div className="head">
-            <BsBag className="icon"/>
-            <span>0</span>
+          <BsBag className="icon" />
+          <span>0</span>
         </div>
+        <hr className="hr" />
+
+        {Data.map((prod) => {
+          return (
+            <>
+              <ProductCard key={prod.id} title="shoes" desc={prod.desc} className="evryCard" />
+            </>
+          );
+        })}
+        <div className="allCard"></div>
       </div>
     </>
   );
