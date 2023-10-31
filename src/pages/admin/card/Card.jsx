@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.css";
 import { BsBag } from "react-icons/bs";
 import ProductCard from "../../../components/card/ProductCard";
@@ -6,6 +6,7 @@ import ProductCard from "../../../components/card/ProductCard";
 import Data from "../../../data";
 
 function Card() {
+  const [proDate, setProDate] = useState(Data);
   return (
     <>
       <input type="text" id="menu-toggle" />
@@ -88,15 +89,16 @@ function Card() {
           <span>0</span>
         </div>
         <hr className="hr" />
-
-        {Data.map((prod) => {
+        <div className="allCard">
+        {proDate.map((prod) => {
           return (
             <>
-              <ProductCard key={prod.id} title="shoes" desc={prod.desc} className="evryCard" />
+              <ProductCard {...prod} className="evryCard" />
             </>
           );
         })}
-        <div className="allCard"></div>
+
+        </div>
       </div>
     </>
   );
