@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Card.css";
 import { BsBag } from "react-icons/bs";
 import ProductCard from "../../../components/card/ProductCard";
+import TeastContainer from "../../../components/toast/TeastContainer";
 
 import Data from "../../../data";
 
@@ -99,7 +100,8 @@ function Card() {
         })}
 
         </div>
-      </div>
+        </div>
+          <TeastContainer />
     </>
   );
 }

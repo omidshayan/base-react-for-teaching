@@ -1,0 +1,23 @@
+.toast-body{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: greenyellow;
+    width: 250px;
+    height: 40px;
+    color: black;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    visibility: hidden;
+}
+.toast-icon{
+    margin-right: 10px;
+}
+.toast-title{
+    margin-right: 40px;
+    font-size: 18px;
+}
+.show{
+    visibility: visible;
+}
