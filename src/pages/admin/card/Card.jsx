@@ -5,6 +5,7 @@ import ProductCard from "../../../components/card/ProductCard";
 import TeastContainer from "../../../components/toast/TeastContainer";
 
 import Data from "../../../data";
+import CardList from "../../../components/cardList/CardList";
 
 function Card() {
   const [proDate, setProDate] = useState(Data);
@@ -102,6 +103,7 @@ function Card() {
         </div>
         </div>
           <TeastContainer />
+          <CardList />
     </>
   );
 }
