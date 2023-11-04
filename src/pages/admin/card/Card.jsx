@@ -7,10 +7,28 @@ import TeastContainer from "../../../components/toast/TeastContainer";
 import Data from "../../../data";
 import CardList from "../../../components/cardList/CardList";
 
+import ProductsContext from './../../../context/ProductsContext';
+
+
 function Card() {
+
+  const [isShow, setIsShow] = useState(false)
+  const [isActive, setIsActive] = useState(false)
+  const [userCard, setUserCard] = useState(false)
+
   const [proDate, setProDate] = useState(Data);
   return (
     <>
+    <ProductsContext.Provider value={{
+      proDate,
+      isShow,
+      setIsShow,
+      isActive,
+      setIsActive,
+      userCard,
+      setUserCard,
+    }}>
+
       <input type="text" id="menu-toggle" />
       <div className="sidebar">
         <div className="sidebar-section">
@@ -104,6 +122,7 @@ function Card() {
         </div>
           <TeastContainer />
           <CardList />
+        </ProductsContext.Provider>
     </>
   );
 }

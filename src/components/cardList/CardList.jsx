@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './cardList.css';
 import {AiOutlineClose} from 'react-icons/ai'
 
 
 export default function CardList() {
+
+
   return (
     <div className='card-container'>
       <div className="top-child">
