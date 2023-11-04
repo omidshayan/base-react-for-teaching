@@ -14,7 +14,7 @@ function Card() {
 
   const [isShow, setIsShow] = useState(false)
   const [isActive, setIsActive] = useState(false)
-  const [userCard, setUserCard] = useState(false)
+  const [userCard, setUserCard] = useState([])
 
   const [proDate, setProDate] = useState(Data);
   return (
@@ -104,20 +104,13 @@ function Card() {
         <h2>Add To Card</h2>
         <br />
         <br />
-        <div className="head">
+        <div onClick={() => {setIsActive(true)}} className="head">
           <BsBag className="icon" />
           <span>0</span>
         </div>
         <hr className="hr" />
         <div className="allCard">
-        {proDate.map((prod) => {
-          return (
-            <>
-              <ProductCard {...prod} className="evryCard" />
-            </>
-          );
-        })}
-
+              <ProductCard className="evryCard"/>
         </div>
         </div>
           <TeastContainer />

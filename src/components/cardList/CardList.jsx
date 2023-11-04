@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './cardList.css';
 import {AiOutlineClose} from 'react-icons/ai'
+import ProductsContext from '../../context/ProductsContext';
 
 
 export default function CardList() {
 
+  const showCard = useContext(ProductsContext);
 
   return (
-    <div className='card-container'>
+    <div className={`${showCard.isActive ? 'active' : ''} card-container`}>
       <div className="top-child">
-        <div className="card-list-icon"><AiOutlineClose /></div>
+        <div onClick={() => {showCard.setIsActive(false)}}
+      className="card-list-icon"><AiOutlineClose /></div>
         <div className="card-list-title">Card List</div>
       </div>
       <hr />

@@ -13,6 +13,7 @@
 }
 .toast-icon{
     margin-right: 10px;
+    cursor: pointer;
 }
 .toast-title{
     margin-right: 40px;

@@ -1,22 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./productCard.css";
+import ProductsContext from "../../context/ProductsContext";
 
-export default function ProductCard({ key, title, desc, price }) {
+export default function ProductCard() {
+  const ProductsContextData = useContext(ProductsContext);
+
   return (
-    <div className="ProductCard">
-      <div className="cardTitle">{title}</div>
-      <div className="cardImg">
-        <img src="/img/img-1.jpg" alt="" />
-      </div>
-      <div className="desc">
-        {desc}
-      </div>
-      <div className="price">
-        {price}
-      </div>
-      <div className="addtocard">
-        <span>Add To Card</span>
-      </div>
-    </div>
+    <>
+      {ProductsContextData.proDate.map((productsDataFromContext) => (
+        <div className="ProductCard">
+          <div className="cardTitle">{productsDataFromContext.title}</div>
+          <div className="cardImg">
+            <img src="/img/img-1.jpg" alt="" />
+          </div>
+          <div className="desc">{productsDataFromContext.desc}</div>
+          <div className="price">{productsDataFromContext.price}</div>
+          <div onClick={() => {
+              ProductsContextData.setIsShow(true)
+            setTimeout(() =>{
+              ProductsContextData.setIsShow(false)
+            },2000)
+            }} className="addtocard">
+            <span>Add To Card</span>
+          </div>
+        </div>
+      ))}
+    </>
   );
 }

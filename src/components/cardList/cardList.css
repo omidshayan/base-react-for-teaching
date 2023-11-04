@@ -8,7 +8,7 @@
     border-radius: 5px;
     color: white;
     overflow: auto;
-    visibility: hidden;
+    opacity: 0;
 }
 .top-child{
     display: flex;
@@ -43,5 +43,5 @@
     color: rgba(240, 248, 255, 0.801);
 }
 .active{
-    visibility: visible;
+    opacity: 1;
 }
