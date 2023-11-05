@@ -19,7 +19,17 @@ export default function ProductCard() {
               ProductsContextData.setIsShow(true)
             setTimeout(() =>{
               ProductsContextData.setIsShow(false)
-            },2000)
+            },2000);
+            let newAddCard = {
+              id: productsDataFromContext.userCard.length = 1,
+              title: productsDataFromContext.title,
+              price: productsDataFromContext.price,
+            };
+            productsDataFromContext.setUserCard((prev) => [
+              ...prev, newAddCard,
+            ]);
+
+            
             }} className="addtocard">
             <span>Add To Card</span>
           </div>

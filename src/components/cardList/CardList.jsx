@@ -16,23 +16,13 @@ export default function CardList() {
         <div className="card-list-title">Card List</div>
       </div>
       <hr />
-      <div className="card-item">
-        <img src="img/img-1.jpg" alt="" className="card-img" />
-        <div className="card-price">2350$</div>
-        <div className="card-name">node js</div>
-      </div>      <div className="card-item">
-        <img src="img/img-1.jpg" alt="" className="card-img" />
-        <div className="card-price">2350$</div>
-        <div className="card-name">node js</div>
-      </div>      <div className="card-item">
-        <img src="img/img-1.jpg" alt="" className="card-img" />
-        <div className="card-price">2350$</div>
-        <div className="card-name">node js</div>
-      </div>      <div className="card-item">
-        <img src="img/img-1.jpg" alt="" className="card-img" />
-        <div className="card-price">2350$</div>
-        <div className="card-name">node js</div>
-      </div>
+      {showCard.userCard.map((products =>(
+              <div className="card-item" key={products.id}>
+              <img src="img/img-1.jpg" alt="" className="card-img" />
+              <div className="card-price">{products.price}</div>
+              <div className="card-name">{products.name}</div>
+            </div>
+      )))}
     </div>
   )
 }
